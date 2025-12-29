@@ -1,0 +1,82 @@
+:root {
+    --bg-dark: #02050a;
+    --card-bg: #0c121d;
+    --cyan: #38bdf8;
+    --white: #ffffff;
+    --gray: #94a3b8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Cairo', sans-serif; background: var(--bg-dark); color: var(--white); direction: rtl; line-height: 1.6; overflow-x: hidden; }
+.container { width: 90%; max-width: 1100px; margin: auto; }
+
+header { padding: 15px 0; background: rgba(2, 5, 10, 0.95); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { height: 45px; }
+.logo-text { font-weight: 900; color: var(--cyan); font-size: 1.3rem; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--cyan); }
+.btn-contact { background: var(--cyan); color: #000 !important; padding: 8px 18px; border-radius: 50px; font-weight: bold; }
+
+.hero { padding: 100px 0; text-align: center; }
+.badge { border: 1px solid var(--cyan); color: var(--cyan); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; background: rgba(56, 189, 248, 0.1); }
+.hero h1 { font-size: 3rem; margin: 20px 0; font-weight: 900; }
+.cyan { color: var(--cyan); }
+.hero-desc { color: var(--gray); max-width: 650px; margin: 0 auto 30px; }
+
+.btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
+.btn-main { background: var(--cyan); color: #000; }
+.btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); }
+.btn-outline { border: 1px solid var(--gray); color: #fff; margin-right: 10px; }
+
+.section { padding: 80px 0; }
+.bg-darker { background: #05080d; }
+.section-title { text-align: center; margin-bottom: 50px; }
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.service-item { background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.03); transition: 0.3s; }
+.service-item:hover { transform: translateY(-10px); border-color: var(--cyan); }
+.service-item i { font-size: 2.5rem; color: var(--cyan); margin-bottom: 20px; }
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+.work-box { border-radius: 15px; overflow: hidden; height: 300px; background: #000; }
+.work-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.work-box:hover img { transform: scale(1.1); }
+
+/* تنسيق قسم التواصل */
+.contact-wrapper { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; align-items: start; }
+.contact-form-card { background: var(--card-bg); padding: 35px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: var(--cyan); font-weight: 600; font-size: 0.9rem; }
+.modern-form input, .modern-form textarea { width: 100%; padding: 15px; background: #05080d; border: 1px solid #1e293b; color: white; border-radius: 12px; font-family: 'Cairo'; }
+
+.btn-submit { 
+    width: 100%; padding: 16px; background: var(--cyan); color: #000; 
+    border: none; border-radius: 12px; font-family: 'Cairo'; font-weight: 900; 
+    font-size: 1.1rem; cursor: pointer; transition: 0.3s; display: flex; 
+    justify-content: center; align-items: center; gap: 10px;
+}
+.btn-submit:hover { opacity: 0.9; }
+
+.status-msg { margin-top: 15px; text-align: center; font-weight: bold; display: none; }
+
+.contact-info-card { display: flex; flex-direction: column; gap: 20px; }
+.info-box { background: var(--card-bg); padding: 25px; border-radius: 20px; display: flex; align-items: center; gap: 15px; border: 1px solid rgba(255,255,255,0.03); }
+.info-box i { font-size: 1.4rem; color: var(--cyan); background: rgba(56, 189, 248, 0.1); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+
+/* إصلاح الشعار في الفوتر */
+.footer { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { display: flex; align-items: center; gap: 15px; }
+.footer-small-img { height: 50px; width: auto; opacity: 0.8; }
+.social-links a { color: white; font-size: 1.5rem; margin-left: 15px; transition: 0.3s; }
+.social-links a:hover { color: var(--cyan); }
+
+@media (max-width: 850px) { .contact-wrapper { grid-template-columns: 1fr; } .nav-links { display: none; } .footer-content { justify-content: center; text-align: center; } .footer-logo { flex-direction: column; } }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.whatsapp-float { position: fixed; bottom: 25px; left: 25px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 2000; transition: 0.3s; }
+.whatsapp-float:hover { transform: scale(1.1); }
